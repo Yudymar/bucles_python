@@ -10,6 +10,9 @@
 # de mucho más tiempo para abordar estos temas por su cuenta.
 # Requiere mayor tiempo de dedicación e investigación autodidacta.
 
+from itertools import count
+
+
 temp_dataloger = [12.8, 18.6, 14.5, 20.8, 12.1, 21.2, 13.5, 18.6,
                   14.7, 19.6, 11.2, 18.4]
 
@@ -51,18 +54,58 @@ temperatura_len = 0         # Aquí debe almacenar cuantas temperatuas hay en la
 
 # Colocar el bucle aqui......
 
+for h in temp_dataloger:
+
+    if temperatura_max is None or h > temperatura_max:
+        temperatura_max = h
+
+    if temperatura_min is None or h < temperatura_min:
+        temperatura_min = h
+
+    temperatura_sumatoria += h
+
+    temperatura_len = len(temp_dataloger)
+
+
+
+print('La temperatura maxima es:', temperatura_max)
+print('La temperatura minima es:', temperatura_min)
+
+
 # Al finalizar el bucle compare si el valor que usted calculó para
 # temperatura_max y temperatura_min coincide con el que podría calcular
 # usando la función "max" y la función "min" de python
 # función "max" --> https://www.w3schools.com/python/ref_func_max.asp
 # función "min" --> https://www.w3schools.com/python/ref_func_min.asp
 
+print('--------Comparacion Max y Min--------')
+
+temperatura_max_2 = max(temp_dataloger)
+temperatura_min_2 = min(temp_dataloger)
+
+print('La temperatura maxima es:', temperatura_max_2)
+print('La temperatura minima es:', temperatura_min_2)
+
 # Al finalizar el bucle debe calcular el promedio como:
 # temperatura_promedio = temperatura_sumatoria / cantidad_temperatuas
+
+print('------Promedio------')
+
+temperatura_promedio = round((temperatura_sumatoria / temperatura_len), 2)
+
+print('La temperatura promedio es:', temperatura_promedio)
 
 # Corroboren los resultados de temperatura_sumatoria
 # usando la función "sum"
 # función "sum" --> https://www.w3schools.com/python/ref_func_sum.asp
+
+print('--------Comparacion SUM--------')
+
+print('La sumatoria de todas las temperaturas es de:', round(temperatura_sumatoria, 2))
+
+temperatura_sumatoria_2 = round(sum(temp_dataloger),2)
+
+print('La sumatoria de todas las temperaturas es de:', temperatura_sumatoria_2)
 
 '''
 Una vez que tengamos nuestros valores correctamente calculados debemos
@@ -83,3 +126,21 @@ https://es.weatherspark.com/y/28981/Clima-promedio-en-Buenos-Aires-Argentina-dur
 # ¿En qué época del año nos encontramos?
 # Imprima el resultado en pantalla
 # Debe utilizar temperatura_max y temperatura_min para definirlo
+
+print('-------Epoca del año-------')
+
+temperatura_min = round(temperatura_min)
+temperatura_max = round(temperatura_max)
+
+if temperatura_min <= 19 and temperatura_max >= 28:
+    print('Estamos en la estacion: verano, ya que la temperatura minima es de:', temperatura_min, 'y la temperatura maxima es de:', temperatura_max)
+elif temperatura_min <= 11 and temperatura_max >= 20:
+    print('Estamos en la estacion: otoño, ya que la temperatura minima es de:', temperatura_min, 'y la temperatura maxima es de:', temperatura_max)
+elif temperatura_min <= 8 and temperatura_max >= 14:
+    print('Estamos en la estacion: invierno, ya que la temperatura minima es de:', temperatura_min, 'y la temperatura maxima es de:', temperatura_max)
+elif temperatura_min <= 10 and temperatura_max >= 24:
+    print('Estamos en la estacion: primavera, ya que la temperatura minima es de:', temperatura_min, 'y la temperatura maxima es de:', temperatura_max)
+
+
+
+

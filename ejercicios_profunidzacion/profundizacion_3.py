@@ -10,6 +10,9 @@
 # de mucho más tiempo para abordar estos temas por su cuenta.
 # Requiere mayor tiempo de dedicación e investigación autodidacta.
 
+from itertools import count
+
+
 notas = [70, 82, -1, 65, 55, 67, 87, 92, -1]
 
 # IMPORTANTE: NO borrar los comentarios en VERDE o NARANJA
@@ -42,17 +45,53 @@ print("Mi organizador académico (#_#)")
 # Para calcular el promedio primero debe obtener la suma
 # de todas las notas, que irá almacenando en esta variable
 sumatoria = 0           # Ya le hemos inicializado en 0
-
 cantidad_notas = 0      # Aquí debe contar cuantas notas válidas encontró
+
+
 cantidad_ausentes = 0   # Aquí debe contar cuantos ausentes hubo
 
 # Realice aquí el bucle para recorrer todas las notas
 # y cacular la sumatoria
 
+notas_validas = []
+notas_ausentes = []
+
+for h in notas:
+    sumatoria += h 
+    
+    if h > 0:
+        notas_validas.append(h)
+        cantidad_notas = len(notas_validas)
+
+
+    else:
+        notas_ausentes.append(h)
+        cantidad_ausentes = len(notas_ausentes)
+
+
 # Terminado el bucle calcule el promedio como
 # promedio = sumatoria / cantidad_notas
+
+promedio = sumatoria / cantidad_notas
 
 # Utilice la nota promedio calculada y transformela
 # a calificación con letras, imprima en pantalla el resultado
 
+if promedio >= 90:
+    print('La nota es A')
+
+elif promedio >= 80:
+    print('La nota es B')
+
+elif promedio >= 70:
+    print('La nota es C')
+
+elif promedio >= 60:
+    print('La nota es D')
+
+elif promedio < 60:
+    print('La nota es F')
+
 # Imprima en pantalla al cantidad de ausentes
+
+print('La cantidad de ausentes fue de:', cantidad_ausentes)

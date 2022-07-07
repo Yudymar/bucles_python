@@ -35,3 +35,44 @@ alguno de lo soportados o no es la palabra "FIN".
 
 print("Mi Calculadora (^_^)")
 # Empezar aquí la resolución del ejercicio
+
+primer_numero = int(input('Ingrese el primer número de la secuencia\n'))
+
+segundo_numero = int(input('Ingrese el último número de la secuencia\n'))
+
+operador = str(input('Ingrese el simbolo de operacion que desea ejecutar\n'))
+
+resultado = 0
+
+# ----- Bucle -----
+
+while True:
+    if operador != 'FIN':
+        if operador == '+':
+            resultado = primer_numero + segundo_numero
+            print('El resultado de la suma es:', resultado)
+    
+        elif operador == '-':
+            resultado = primer_numero - segundo_numero
+            print('El resultado de la resta es:', resultado)
+
+        elif operador == '*':
+            resultado = primer_numero * segundo_numero
+            print('El resultado de la multiplicacion es:', resultado)
+
+        elif operador == '/':
+            resultado = primer_numero / segundo_numero
+            print('El resultado de la division es:', resultado)
+
+        elif operador == '**':
+            resultado = primer_numero ** segundo_numero
+            print('El resultado de la potencia es:', resultado)
+
+        elif operador != '+' or operador != '-' or operador != '*' or operador != '/' or operador != '**' or operador != 'FIN':
+            print('Usted no ha ingresado un valor correcto')
+
+    operador = str(input('Ingrese el simbolo de operacion que desea ejecutar\n'))
+
+    if operador == 'FIN':
+        break
+    

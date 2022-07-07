@@ -24,18 +24,37 @@ Tener en cuenta que "range" no incluye el número de "fin" en su secuencia,
 sino que va hasta el anterior.
 '''
 
+
+
 print('Comenzamos a ponernos serios!')
 # Empezar aquí la resolución del ejercicio
 
-# inicio = ....
-# fin = ....
+inicio = int(input('Ingrese el primer número de la secuencia\n'))
+
+fin = int(input('Ingrese el último número de la secuencia\n'))
+
 
 # cantidad_numeros ....
+cantidad_numeros = 0
+
 # sumatoria ....
+sumatoria = 0
+
 
 # bucle.....
+
+for k in range(inicio,fin +1):
+    sumatoria += k
+    cantidad_numeros = len(range(inicio,fin +1))
+
 
 # Al terminar el bucle calcular el promedio como:
 # promedio = sumatoria / cantidad_numeros
 
+promedio = sumatoria / cantidad_numeros
+
 # Imprimir resultado en pantalla
+
+print('La sumatoria de todos los numeros es:',sumatoria)
+print('La cantidad total de numeros es:', cantidad_numeros)
+print('El promedio es:', promedio)
